@@ -1,6 +1,6 @@
 # HyperModel
 
-Related model design plugin, It works in jQuery well.
+Related model design plugin, It works with jQuery well.
 
 [![npm version](https://badge.fury.io/js/hypermodel.svg)](https://badge.fury.io/js/hypermodel) [![Bower version](https://badge.fury.io/bo/hypermodel.svg)](https://badge.fury.io/bo/hypermodel) [![Join the chat at https://gitter.im/KennethanCeyer/PIGNOSE](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/KennethanCeyer/PIGNOSE?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
