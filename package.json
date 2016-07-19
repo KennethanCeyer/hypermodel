@@ -1,0 +1,40 @@
+{
+  "name": "hypermodel",
+  "version": "1.0.0",
+  "description": "Related model design plugin, It works in jQuery well.",
+  "main": "index.html",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt-contrib-csslint": "^1.0.0",
+    "grunt-contrib-cssmin": "^1.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KennethanCeyer/HyperModel.git"
+  },
+  "keywords": [
+    "plugin",
+    "hypermodel",
+    "generator",
+    "builder",
+    "wyswyg",
+    "database",
+    "related",
+    "modeling",
+    "bi",
+    "connection",
+    "line",
+    "grid",
+    "jquery",
+    "pignose"
+  ],
+  "author": "PIGNOSE",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KennethanCeyer/HyperModel/issues"
+  },
+  "homepage": "https://github.com/KennethanCeyer/HyperModel#readme"
+}
