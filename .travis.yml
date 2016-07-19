@@ -1,0 +1,14 @@
+language: javascript
+
+before_install:
+ - "export DISPLAY=:99.0"
+ - "sh -e /etc/init.d/xvfb start"
+
+before_script:
+ - 'npm install -g grunt-cli'
+ - 'npm install --save-dev'
+
+after_success:
+ - bash <(curl -s https://codecov.io.bash)
+
+script: grunt test

@@ -1,0 +1,11 @@
+.hypermodel-container {
+    background-color: #f8f8f8;
+    border: 1px solid #d8d8d8;
+    font-size: 115%;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .25);
+}
+
+.hypermodel-container .hypermodel-area {
+    margin: 40px;
+}
