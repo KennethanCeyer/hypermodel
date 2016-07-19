@@ -1,0 +1,475 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<title>JQuery HyperModel</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+	<link rel="stylesheet" href="demo/css/bootstrap.min.css">
+	<link rel="stylesheet" href="demo/css/prism.css" />
+	<link rel="stylesheet" href="demo/css/formula-style.css" />
+	<link rel="stylesheet" type="text/css" href="src/jquery.hypermodel.css" />
+    <link rel="stylesheet" type="text/css" href="demo/css/hypermodel-style.css" />
+	<style type="text/css">
+		@import url(https://fonts.googleapis.com/css?family=Raleway);
+		html, body {
+			position: relative;
+			height: 100%;
+		}
+
+		#wrapper {
+			padding-bottom: 40px;
+		}
+
+		.center {
+			text-align: center;
+		}
+
+		.header {
+			max-width: 1200px;
+			width: 80%;
+			margin: 0 auto;
+			padding-top: 40px;
+			padding-bottom: 40px;
+			margin-bottom: 40px;
+			text-align: center;
+		}
+
+		.header h1 {
+			margin-bottom: 20px;
+			font-size: 24px;
+			font-weight: 400;
+			font-family: 'Raleway', 'helvetica', 'sans-serif';
+			color: #333333;
+		}
+
+		.article {
+			max-width: 1200px;
+			width: 80%;
+			margin: 0 auto;
+			margin-top: 40px;
+			padding-top: 40px;
+			border-top: 1px solid #efefef;
+			font-family: 'Raleway', 'helvetica', 'sans-serif';
+			text-align: center;
+		}
+
+		.article h3 {
+			margin-bottom: 40px;
+		}
+
+		.article table {
+			font-size: 115%;
+			text-align: left;
+		}
+
+		.article pre {
+			font-size: 115%;
+		}
+
+        .article ul {
+            display: inline-block;
+            font-size: 115%;
+            font-weight: 600;
+            margin: 20px 0;
+        }
+
+        .article ul li {
+            margin: 10px 0;
+        }
+
+		.tab { width: 100%; max-width: 600px; margin: 20px auto; border: 1px solid #e7e7e7; padding: 5px; }
+		.nav.tab { width: auto; max-width: 100%; margin: 0; border: 0; padding: 0; border-bottom: 1px solid #ddd; }
+		.pignose-sub-tab { border: 0; margin: 0; padding: 0;
+		.table { width: 100%; table-layout: fixed; }
+		.table .subject { text-align: left; padding-left: 5%; }
+		.table .date { text-align: right; padding-right: 5%; }
+	</style>
+	<script type="text/javascript" src="demo/js/jquery.latest.min.js"></script>
+	<script type="text/javascript" src="demo/js/jquery-ui.latest.js"></script>
+	<script type="text/javascript" src="demo/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="demo/js/prism.min.js"></script>
+    <script type="text/javascript" src="src/vender.raphael.min.js"></script>
+	<script type="text/javascript" src="src/jquery.hypermodel.js"></script>
+	<script type="text/javascript">
+	//<![CDATA[
+	$(function() {
+        $('.hypermodel-container').hypermodel({
+            time: {
+                animate: 300,    // The line animation time when either window resize event be fired or user playing with drag&drop.
+                frame: 3000      // The dash line's dash moving total seconds.
+            },
+            grad: 1,             // The gradient of line 0.1(curve), 10(straight).
+            strokeSpeed: 500,    // How many dash line moves one second.
+            strokeColor: 'rgba(192, 192, 192, .5)',     // Default line color (rgba, rgb, hash color).
+            strokeDashColor: 'rgba(60, 180, 148, .65)', // Dash line color (rgba, rgb, hash color).
+            strokeWidth: 1,      // Default line thickness (px).
+            strokeDashWidth: 1,  // Dash line thickness (px).
+            strokeDashWeight: 8, // Each of dash dottes's length (px).
+            strokeDashMargin: 6  // Gap about each of dash line's dottes (px).
+        });
+	});
+	//]]>
+	</script>
+</head>
+<body>
+	<div id="wrapper">
+		<div class="header">
+			<img src="demo/img/pignose-logo.jpg" alt="" />
+			<h1>PIGNOSE HyperModel</h1>
+			<a href="https://github.com/KennethanCeyer/HyperModel" target="_blank" class="btn btn-primary">View project on Github</a> <a href="https://github.com/KennethanCeyer/HyperModel/archive/master.zip" target="_blank" class="btn btn-info">Download zip</a>
+		</div>
+		<div class="article">
+			<h3>HyperModel</h3>
+            <h4>HyperModel helps you make related model design by jQuery.</h4>
+            <p>You can drag and swap each of grids and properties.</p>
+            <div class="hypermodel-container">
+                <div class="hypermodel-area">
+            	    <div class="hypermodel-column">
+            	        <div class="hypermodel-grid">
+            	            <div class="hypermodel-header">
+            	                <h3>Model</h3>
+            	            </div>
+            	            <div class="hypermodel-body">
+            	                <div id="model-n1000" class="hypermodel-item" data-target="1, 2, 3">
+            	                    <span>Property</span>
+            	                </div>
+            	                <div id="model-n1001" class="hypermodel-item" data-target="1">
+            	                    <span>Property</span>
+            	                </div>
+            	                <div id="model-n1002" class="hypermodel-item" data-target="3">
+            	                    <span>Property</span>
+            	                </div>
+            	                <div id="model-n1003" class="hypermodel-item">
+            	                    <span>Property</span>
+            	                </div>
+            	                <div id="model-n1004" class="hypermodel-item">
+            	                    <span>Property</span>
+            	                </div>
+            	                <div id="model-n1005" class="hypermodel-item">
+            	                    <span>Property</span>
+            	                </div>
+            	                <div id="model-n1006" class="hypermodel-item">
+            	                    <span>Property</span>
+            	                </div>
+            	                <a href="#" class="hypermodel-item">
+            	                    <span>Property</span>
+            	                </a>
+            	            </div>
+            	        </div>
+            	        <div class="hypermodel-grid">
+            	            <div class="hypermodel-header">
+            	                <h3>Model</h3>
+            	            </div>
+            	            <div class="hypermodel-body">
+            	                <div id="model-n1007" class="hypermodel-item" data-target="1, 2, 3">
+            	                    <span>Property</span>
+            	                </div>
+            	                <div id="model-n1008" class="hypermodel-item" data-target="1">
+            	                    <span>Property</span>
+            	                </div>
+            	                <div id="model-n1009" class="hypermodel-item" data-target="3">
+            	                    <span>Property</span>
+            	                </div>
+            	                <div id="model-n1010" class="hypermodel-item">
+            	                    <span>Property</span>
+            	                </div>
+            	                <div id="model-n1011" class="hypermodel-item">
+            	                    <span>Property</span>
+            	                </div>
+            	                <div id="model-n1012" class="hypermodel-item">
+            	                    <span>Property</span>
+            	                </div>
+            	                <div id="model-n1013" class="hypermodel-item">
+            	                    <span>Property</span>
+            	                </div>
+            	                <div id="model-n1014" class="hypermodel-item">
+            	                    <span>Property</span>
+            	                </div>
+            	                <div id="model-n1015" class="hypermodel-item">
+            	                    <span>Property</span>
+            	                </div>
+            	                <div id="model-n1016" class="hypermodel-item">
+            	                    <span>Property</span>
+            	                </div>
+            	            </div>
+            	        </div>
+            	    </div>
+            	    <div class="hypermodel-column">
+            	        <div id="model-n1" class="hypermodel-grid" data-target="4, 5, 6">
+            	            <div class="hypermodel-header">
+            	                <h3>Related Model A</h3>
+            	            </div>
+            	            <div class="hypermodel-body">
+            	                <div class="hypermodel-item">
+            	                    <span>Property</span>
+            	                </div>
+            	            </div>
+            	        </div>
+            	        <div id="model-n2" class="hypermodel-grid" data-target="7, 8">
+            	            <div class="hypermodel-header">
+            	                <h3>Related Model B</h3>
+            	            </div>
+            	            <div class="hypermodel-body">
+            	                <div class="hypermodel-item">
+            	                    <span>Property</span>
+            	                </div>
+            	                <div class="hypermodel-item">
+            	                    <span>Property</span>
+            	                </div>
+            	                <div class="hypermodel-item">
+            	                    <span>Property</span>
+            	                </div>
+            	            </div>
+            	        </div>
+            	        <div id="model-n3" class="hypermodel-grid" data-target="9">
+            	            <div class="hypermodel-header">
+            	                <h3>Related Model C</h3>
+            	            </div>
+            	            <div class="hypermodel-body">
+            	                <div class="hypermodel-item">
+            	                    <span>Property</span>
+            	                </div>
+            	            </div>
+            	        </div>
+            	    </div>
+            	    <div class="hypermodel-column">
+            	        <div id="model-n4" class="hypermodel-grid" data-target="11, 13">
+            	            <div class="hypermodel-header">
+            	                <h3>Related Model A' 1</h3>
+            	            </div>
+            	            <div class="hypermodel-body">
+            	                <div class="hypermodel-item">
+            	                    <span>Property</span>
+            	                </div>
+            	            </div>
+            	        </div>
+            	        <div id="model-n5" class="hypermodel-grid" data-target="12">
+            	            <div class="hypermodel-header">
+            	                <h3>Related Model A' 2</h3>
+            	            </div>
+            	            <div class="hypermodel-body">
+            	                <div class="hypermodel-item">
+            	                    <span>Property</span>
+            	                </div>
+            	                <div class="hypermodel-item">
+            	                    <span>Property</span>
+            	                </div>
+            	                <div class="hypermodel-item">
+            	                    <span>Property</span>
+            	                </div>
+            	            </div>
+            	        </div>
+            	    </div>
+            	</div>
+            </div>
+		</div>
+        <div class="article">
+			<h3>Dependency</h3>
+            <h4>This plugin has dependencies some javascript library.</h4>
+            <p>Check belows and import it.</p>
+            <ul>
+                <li>jQuery core library</li>
+                <li>jQuery UI library</li>
+                <li>Raphael js library</li>
+            </ul>
+        </div>
+		<div id="content" class="article">
+			<h3>Options</h3>
+			<table class="table table-striped table-hover">
+                <colgroup>
+                    <col style="width: 120px;">
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                </colgroup>
+				<thead>
+					<tr>
+						<th colspan="2">name</th>
+						<th>type</th>
+						<th>description</th>
+                        <th>default</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>time</td>
+                        <td>animate</td>
+						<td class="center"><span class="label label-primary">number</span></td>
+						<td>The line animation time when either window resize event be fired or user playing with drag&amp;drop.</td>
+						<td>300</td>
+					</tr>
+					<tr>
+						<td>time</td>
+                        <td>frame</td>
+						<td class="center"><span class="label label-primary">number</span></td>
+						<td>The dash line's dash moving total seconds.</td>
+						<td>3000</td>
+					</tr>
+					<tr>
+						<td>time</td>
+                        <td>highlight</td>
+						<td class="center"><span class="label label-primary">number</span></td>
+						<td>Highlight holding time. The line will be disappeared when time be ended.</td>
+						<td>3000</td>
+					</tr>
+					<tr>
+						<td colspan="2">grad</td>
+						<td class="center"><span class="label label-primary">number</span></td>
+						<td>The gradient of line 0.1(curve), 10(straight)</td>
+						<td>1.75</td>
+					</tr>
+					<tr>
+						<td colspan="2">strokeSpeed</td>
+						<td class="center"><span class="label label-primary">number</span></td>
+						<td>How many dash line moves one second.</td>
+						<td>500</td>
+					</tr>
+					<tr>
+						<td colspan="2">strokeColor</td>
+						<td class="center"><span class="label label-primary">string</span></td>
+						<td>Default line color (rgba, rgb, hash color).</td>
+						<td>rgba(192, 192, 192, .6)</td>
+					</tr>
+					<tr>
+						<td colspan="2">strokeDashColor</td>
+						<td class="center"><span class="label label-primary">string</span></td>
+						<td>Dash line color (rgba, rgb, hash color).</td>
+						<td>rgba(192, 192, 192, .95)</td>
+					</tr>
+					<tr>
+						<td colspan="2">strokeHighlightColor</td>
+						<td class="center"><span class="label label-primary">string</span></td>
+						<td>Highlighted line color.</td>
+						<td>rgba(200, 206, 255, .6)</td>
+					</tr>
+					<tr>
+						<td colspan="2">strokeHighlightDashColor</td>
+						<td class="center"><span class="label label-primary">string</span></td>
+						<td>Highlighted dash line color.</td>
+						<td>rgba(178, 192, 255, 1)</td>
+					</tr>
+					<tr>
+						<td colspan="2">strokeWidth</td>
+						<td class="center"><span class="label label-primary">number</span></td>
+						<td>Default line thickness (px).</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td colspan="2">strokeDashWidth</td>
+						<td class="center"><span class="label label-primary">number</span></td>
+						<td>Dash line thickness (px).</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td colspan="2">strokeHighlightWidth</td>
+						<td class="center"><span class="label label-primary">number</span></td>
+						<td>Highlighted line thickness (px).</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td colspan="2">strokeDashWeight</td>
+						<td class="center"><span class="label label-primary">number</span></td>
+						<td>Each of dash dottes's length (px).</td>
+						<td>8</td>
+					</tr>
+                    <tr>
+						<td colspan="2">strokeDashMargin</td>
+						<td class="center"><span class="label label-primary">number</span></td>
+						<td>Gap about each of dash line's dottes (px).</td>
+						<td>6</td>
+					</tr>
+                    <tr>
+						<td colspan="2">update</td>
+						<td class="center"><span class="label label-primary">function</span></td>
+						<td>If you change grid or property position by drag and drop, This callback will be fired.</td>
+						<td>null</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+        <div id="content" class="article">
+			<h3>Methods</h3>
+            <h4>You can call plugin's method by using <span class="label label-default">$element.hypermodel('Method Name', arguments);</span> format.</h4>
+			<table class="table table-striped table-hover">
+				<thead>
+					<tr>
+						<th>name</th>
+						<th>type</th>
+						<th>description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+                        <td>add</td>
+						<td class="center"><span class="label label-primary">function</span></td>
+						<td><span class="label label-default">$element</span> will be added, but not be connected yet.</td>
+					</tr>
+                    <tr>
+                        <td>connect($target)</td>
+						<td class="center"><span class="label label-primary">function</span></td>
+						<td><span class="label label-default">$element</span> will be connected with $target.</td>
+					</tr>
+                    <tr>
+                        <td>highlight($target)</td>
+						<td class="center"><span class="label label-primary">function</span></td>
+						<td>The line which be matched between <span class="label label-default">$element</span> and <span class="label label-default">$target</span> will be highlighted.</td>
+					</tr>
+                    <tr>
+                        <td>remove()</td>
+						<td class="center"><span class="label label-primary">function</span></td>
+						<td><span class="label">$element</span> will be removed, And all of connections which belong in the $element also be removed.</td>
+					</tr>
+                    <tr>
+                        <td>repaint()</td>
+						<td class="center"><span class="label label-primary">function</span></td>
+						<td>Browser will repaint the lines at correct position.</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div id="bower" class="article">
+			<h3>bower</h3>
+			<blockquote><p>If you use bower.</p></blockquote>
+			<pre><code class="language-bash">bower install hypermodel</code></pre>
+		</div>
+		<div id="npm" class="article">
+			<h3>npm</h3>
+			<blockquote><p>If you use npm.</p></blockquote>
+			<pre><code class="language-bash">npm install hypermodel</code></pre>
+		</div>
+		<div id="sample" class="article">
+			<h3>sample</h3>
+			<ul class="nav nav-tabs tab">
+				<li role="presentation" class="active"><a href="#html" data-toggle="tab" aria-controls="html">HTML</a></li>
+				<li role="presentation"><a href="#javascript" data-toggle="tab" aria-controls="javascript">Javascript</a></li>
+				<li role="presentation"><a href="#css" data-toggle="tab" aria-controls="css">CSS</a></li>
+			</ul>
+			<div class="tab-content">
+				<div role="tabpanel" class="tab-pane active" id="html">
+					<pre><code class="language-markup">&lt;div class=&quot;hypermodel-container&quot;&gt;&lt;/div&gt;</code></pre>
+				</div>
+				<div role="tabpanel" class="tab-pane" id="javascript">
+					<pre><code class="language-js">$(function() {
+	$('.hypermodel-container').hypermodel();
+});</code></pre>
+				</div>
+				<div role="tabpanel" class="tab-pane" id="css">
+					<pre><code class="language-css">.hypermodel-container {
+    background-color: #f8f8f8;
+    border: 1px solid #d8d8d8;
+    font-size: 115%;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .25);
+}
+
+.hypermodel-container .hypermodel-area {
+    margin: 40px;
+}</code></pre>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

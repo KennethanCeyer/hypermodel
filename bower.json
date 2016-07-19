@@ -1,0 +1,36 @@
+{
+  "name": "hypermodel",
+  "description": "Related model design plugin, It works in jQuery well.",
+  "main": "index.html",
+  "authors": [
+    "PIGNOSE"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "plugin",
+    "hypermodel",
+    "generator",
+    "builder",
+    "wyswyg",
+    "database",
+    "related",
+    "modeling",
+    "bi",
+    "connection",
+    "line",
+    "grid",
+    "jquery",
+    "pignose"
+  ],
+  "moduleType": [
+    "globals"
+  ],
+  "homepage": "http://www.pigno.se/barn/PIGNOSE-HyperModel/",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
