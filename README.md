@@ -1,4 +1,4 @@
-# Formula
+# HyperModel
 
 Related model design plugin, It works in jQuery well.
 
