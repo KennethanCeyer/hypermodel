@@ -1,8 +1,8 @@
 /************************************************************************************************************
  *
- * @ Version 1.1.0
+ * @ Version 1.0.2
  * @ jQuery Hypermodel
- * @ Date 01. 03. 2016
+ * @ Update 07. 19. 2016
  * @ Author PIGNOSE
  * @ Licensed under MIT.
  *
@@ -16,9 +16,9 @@
         var method = 'init';
         var $window = $(window), $document = $(document);
 
-        if (typeof opt !== 'object' && typeof opt !== 'array') {
+        if (typeof opt !== 'object') {
             method = opt;
-            var opt = arg;
+            opt = arg;
         }
 
         var _opt = {
@@ -62,7 +62,7 @@
         var paper = null;
         var getDistanceBtDot = function (pos1, pos2) {
             return Math.sqrt(Math.pow(pos2.x - pos1.x, 2) + Math.pow(pos2.y - pos1.y, 2));
-        }
+        };
 
         var hyperModelChange = function () {
             hyperModelUpdate.apply(this, Array.prototype.slice.call(arguments));
@@ -70,7 +70,7 @@
 
         var hyperModelUpdate = function () {
             $window.triggerHandler('resize.hypermodelHandler');
-        }
+        };
 
         var hypermodelColumnHandler = function (i) {
             var $this = $(this);
@@ -123,9 +123,11 @@
                                 t: parseInt($r.css('padding-top').replace(/[^\d]+/, '') || 0),
                                 l: parseInt($r.css('padding-left').replace(/[^\d]+/, '') || 0)
                             };
-
+                            var docWidth = 0, docHeight = 0;
                             try {
-                                var docWidth = $r.parent()[0].scrollWidth - paddingGap.l * 2, docHeight = $r.parent()[0].scrollHeight - paddingGap.t * 2;
+                                /* jshint ignore:start */
+                                docWidth = ($r.parent())[0].scrollWidth - paddingGap.l * 2, docHeight = ($r.parent())[0].scrollHeight - paddingGap.t * 2;
+                                /* jshint ignore:end */
                             } catch (e) {
                                 return false;
                             }
@@ -157,7 +159,7 @@
                                 var $this = $(this);
                             }).each(function () {
                                 var $this = $(this);
-                                if (typeof $this.data('target') !== 'undefined' && $this.data('target') != '') {
+                                if (typeof $this.data('target') !== 'undefined' && $this.data('target') !== '') {
                                     var eObj = {
                                         t: $this.offset().top + prop.offset.d - prop.offset.g + prop.offset.t - positionGap.t - paddingGap.t,
                                         r: $this.offset().left + $this.outerWidth() + prop.offset.d - prop.offset.g - positionGap.l - paddingGap.l,
@@ -168,9 +170,9 @@
                                     var tids = $this.data('target').toString().split(',');
                                     var pos1 = { x: 0, y: 0 }, pos2 = { x: 0, y: 0 };
 
-                                    if (typeof $this.attr('id') !== 'undefined' && $this.attr('id') != null) {
+                                    if (typeof $this.attr('id') !== 'undefined' && $this.attr('id') !== null) {
                                         sid = $this.attr('id').replace(/.*model-[nc](\d+).*/, '$1');
-                                        if (typeof sid !== 'undefined' && sid != '') {
+                                        if (typeof sid !== 'undefined' && sid !== '') {
                                             sid = parseInt(sid);
                                         }
                                     }
@@ -212,7 +214,7 @@
 
                                         pathData += ' M ' + eObj.r + ' ' + eObj.t;
 
-                                        if (eObj.t != tObj.t && useCurve == true) {
+                                        if (eObj.t !== tObj.t && useCurve === true) {
                                             var hDiffL = (Math.abs(eObj.r - tObj.l) / (_opt.grad * 1));
                                             var hDiffT = (Math.abs(eObj.t - tObj.t) / 100);
                                             pathData += ' C ' + (eObj.r + hDiffL) + ' ' + (eObj.t + hDiffT) + ' ' + (tObj.l - hDiffL) + ' ' + (tObj.t - hDiffT) + ' ';
@@ -223,19 +225,20 @@
                                         pathData += tObj.l + ' ' + tObj.t;
                                         styles += '@keyframes keyframe-dash-i' + index + ' {to {stroke-dashoffset: ' + distance + ';}}@-webkit-keyframes keyframe-dash-i' + index + ' {to {stroke-dashoffset: ' + distance + ';}}';
 
-                                        if (event.type != 'init') {
-                                            for (var i in matches[mid]) {
+                                        if (event.type !== 'init') {
+                                            for (i in matches[mid]) {
+                                                /* jshint ignore:start */
                                                 var path = matches[mid][i];
                                                 path.animate({ path: pathData }, _opt.time.animate);
                                                 if ($.inArray(mid, hids) != -1) {
                                                     path.node.setAttribute("stroke-width", _opt.strokeHighlightWidth);
-                                                    if (i == 0) {
+                                                    if (i === 0) {
                                                         path.node.setAttribute("stroke", _opt.strokeHighlightColor);
                                                     } else {
                                                         path.node.setAttribute("stroke", _opt.strokeHighlightDashColor);
                                                     }
                                                 } else {
-                                                    if (i == 0) {
+                                                    if (i === 0) {
                                                         path.node.setAttribute("stroke-width", _opt.strokeWidth);
                                                         path.node.setAttribute("stroke", _opt.strokeColor);
                                                     } else {
@@ -243,10 +246,11 @@
                                                         path.node.setAttribute("stroke", _opt.strokeDashColor);
                                                     }
                                                 }
+                                                /* jshint ignore:end */
                                             }
                                             try {
                                                 matches[mid][1].node.setAttribute("style", "animation: keyframe-dash-i" + index + " " + (distance / _opt.strokeSpeed * _opt.time.frame / 100.0) + "s linear infinite; -webkit-animation: keyframe-dash-i" + index + " " + (distance / 500 * 30) + "s linear infinite");
-                                            } catch (e) {; }
+                                            } catch (e) { }
                                         }
 
                                         if (typeof matches[mid] === 'undefined') {
@@ -386,7 +390,7 @@
                         var $target = $(this);
                         var id = $target.attr('id').replace(/.*model-[nc](\d+).*/, '$1');
                         var t = $this.data('target');
-                        if (typeof t !== 'undefined' && t != null && t != '') {
+                        if (typeof t !== 'undefined' && t !== null && t !== '') {
                             t = t.split(',');
                         } else {
                             t = [];
@@ -401,7 +405,7 @@
                     var $this = $(this);
                     var hid = $this.data('highlight') ? $this.data('highlight') : '';
                     var stack = [];
-                    hid = hid == '' ? [] : hid.split(',');
+                    hid = hid === '' ? [] : hid.split(',');
                     if (typeof opt === 'undefined') {
                         var target = (($this.data('target'))? $this.data('target'):'').toString();
                         var parted_tids = target.split(',');
@@ -414,7 +418,7 @@
                         opt.each(function () {
                             var $target = $(this);
                             var id = $target.attr('id').replace(/.*model-[nc](\d+).*/, '$1');
-                            if (id != '') {
+                            if (id !== '') {
                                 hid.push(id);
                                 stack.push(id);
                             }
@@ -424,7 +428,7 @@
                     $window.triggerHandler('resize.hypermodelHandler');
                     setTimeout(function () {
                         var hid = $this.data('highlight') ? $this.data('highlight') : '';
-                        hid = hid == '' ? [] : hid.split(',');
+                        hid = hid === '' ? [] : hid.split(',');
                         for(var idx in stack) {
                             var item = stack[idx];
                             if($.inArray(item, hid) != -1) {
@@ -444,11 +448,11 @@
                     var l = [];
                     var m = $this.data('modelview-m');
                     var p = $this.data('modelview-p');
-                    if (typeof m !== 'undefined' && m != null) {
+                    if (typeof m !== 'undefined' && m !== null) {
                         m = m.toString().split(',');
                         l = l.concat(m);
                     }
-                    if (typeof p !== 'undefined' && p != null) {
+                    if (typeof p !== 'undefined' && p !== null) {
                         p = p.toString().split(',');
                         l = l.concat(p);
                     }
@@ -465,5 +469,5 @@
                 });
                 return this.hypermodel('repaint');
         }
-    }
+    };
 }(jQuery));
