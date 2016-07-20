@@ -1,6 +1,6 @@
 {
   "name": "hypermodel",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Related model design plugin, It works in jQuery well.",
   "main": "index.html",
   "dependencies": {},
