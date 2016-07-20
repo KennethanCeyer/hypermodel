@@ -22,7 +22,7 @@
 .hypermodel-wrapper .hypermodel-area .hypermodel-column {
     float: left;
     display: block;
-    min-width: 240px;
+    width: 240px;
     margin-right: 40px;
     vertical-align: top;
 }
@@ -114,7 +114,6 @@
 
 .hypermodel-item {
     display: block;
-    width: 100%;
     height: 2.6em;
     line-height: 2.4em;
     background-color: #fcfcfc;
