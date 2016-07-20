@@ -38,7 +38,7 @@
             strokeHighlightWidth: 1,
             strokeDashWidth: 1,
             strokeDashWeight: 8,
-            strokeDashMargin: 6,
+            strokeDashMargin: 6
         };
         $.extend(_opt, opt);
 
