@@ -3,7 +3,13 @@
     z-index: 100;
     font-size: 0;
     margin-bottom: 100px;
-    overflow: hidden;
+}
+
+.hypermodel-wrapper .hypermodel-area:after {
+    display: block;
+    height: 0;
+    content: '';
+    clear: both;
 }
 
 .hypermodel-wrapper .hypermodel:before,
@@ -14,9 +20,8 @@
 }
 
 .hypermodel-wrapper .hypermodel-area .hypermodel-column {
-    display: inline-block;
-    *display: inline;
-    *zoom: 1;
+    float: left;
+    display: block;
     min-width: 240px;
     margin-right: 40px;
     vertical-align: top;

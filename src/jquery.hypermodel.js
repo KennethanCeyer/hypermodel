@@ -1,9 +1,9 @@
 /************************************************************************************************************
  *
- * @ Version 1.0.3
+ * @ Version 1.0.4
  * @ jQuery Hypermodel
- * @ Update 07. 19. 2016
- * @ Author PIGNOSE
+ * @ Update 07. 20. 2016
+ * @ Author PIGNOSE - https://github.com/KennethanCeyer
  * @ Licensed under MIT.
  *
  ***********************************************************************************************************/
@@ -60,6 +60,7 @@
         var $canvas = null;
         var useCurve = true;
         var paper = null;
+        var selection = window.getSelection ? window.getSelection() : document.selection ? document.selection : null;
         var getDistanceBtDot = function (pos1, pos2) {
             return Math.sqrt(Math.pow(pos2.x - pos1.x, 2) + Math.pow(pos2.y - pos1.y, 2));
         };
@@ -74,13 +75,27 @@
 
         var hypermodelColumnHandler = function (i) {
             var $this = $(this);
-
+            $r.disableSelection();
             $this.sortable({
                 items: '.hypermodel-grid',
                 handle: '.hypermodel-header',
                 change: hyperModelChange,
                 out: hyperModelUpdate,
-                containment: 'parent',
+                containment: 'body',
+                tolerance: 'pointer',
+                dropOnEmpty: true,
+                axis: "y",
+                scroll: true,
+                beforeStop: function(event, ui) {
+                    var $this = $(this);
+                    var $last = $this.children(':last');
+                    var lastItemTop = $last.position().top;
+                    var currentItemTop = ui.position.top;
+                    var currentItemHeight = ui.item.height();
+                    if (currentItemTop + currentItemHeight * 2 > lastItemTop) {
+                        $last.insertBefore(ui.item);
+                    }
+                },
                 start: function (e, ui) {
                     ui.placeholder.height(ui.item.height());
                     ui.item.data('sortable-idx', ui.item.index());
@@ -89,6 +104,9 @@
                     if (typeof _opt.update === 'function') {
                         _opt.update.apply(this, Array.prototype.slice.call(arguments));
                     }
+                },
+                stop: function() {
+                    _this.hypermodel('repaint');
                 }
             });
         };
@@ -97,7 +115,15 @@
             case 'init':
                 matches = [];
                 return this.each(function () {
-                    $r.css('position', 'relative');
+                    $r.css('position', 'relative').bind('click', function(event) {
+                        if(selection) {
+                            if(selection.empty) {
+                                selection.empty();
+                            } else {
+                                selection.removeAllRanges();
+                            }
+                        }
+                    });
                     $r.find('.hypermodel-column .hypermodel-grid').bind('click', function (event) {
                         event.stopPropagation();
                         var $this = $(this);
@@ -232,16 +258,18 @@
                                                 path.animate({ path: pathData }, _opt.time.animate);
                                                 if ($.inArray(mid, hids) != -1) {
                                                     path.node.setAttribute("stroke-width", _opt.strokeHighlightWidth);
-                                                    if (i === 0) {
+                                                    if (i === '0') {
                                                         path.node.setAttribute("stroke", _opt.strokeHighlightColor);
                                                     } else {
                                                         path.node.setAttribute("stroke", _opt.strokeHighlightDashColor);
                                                     }
                                                 } else {
-                                                    if (i === 0) {
+                                                    if (i === '0') {
+                                                        path.node.setAttribute("type", "straight");
                                                         path.node.setAttribute("stroke-width", _opt.strokeWidth);
                                                         path.node.setAttribute("stroke", _opt.strokeColor);
                                                     } else {
+                                                        path.node.setAttribute("type", "dash");
                                                         path.node.setAttribute("stroke-width", _opt.strokeDashWidth);
                                                         path.node.setAttribute("stroke", _opt.strokeDashColor);
                                                     }
@@ -317,7 +345,8 @@
                             change: hyperModelChange,
                             out: hyperModelUpdate,
                             containment: 'parent',
-                            start: function(e, ui){
+                            tolerance: 'pointer',
+                            start: function(e, ui) {
                                 ui.placeholder.height(ui.item.height());
                                 ui.item.data('sortable-idx', ui.item.index());
                             },
@@ -363,6 +392,10 @@
                             change: hyperModelChange,
                             out: hyperModelUpdate,
                             containment: 'parent',
+                            tolerance: 'intersect',
+                            axis: "y",
+                            scroll: true,
+                            dropOnEmpty:true,
                             start: function (e, ui) {
                                 ui.placeholder.height(ui.item.height());
                                 ui.item.data('sortable-idx', ui.item.index());
@@ -372,7 +405,7 @@
                                     _opt.update.apply(this, Array.prototype.slice.call(arguments));
                                 }
                             }
-                        });
+                        }).disableSelection();
                     }
 
                     if ($this.hasClass('hypermodel-grid')) {
