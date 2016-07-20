@@ -1,6 +1,6 @@
 /************************************************************************************************************
  *
- * @ Version 1.0.4
+ * @ Version 1.0.5
  * @ jQuery Hypermodel
  * @ Update 07. 20. 2016
  * @ Author PIGNOSE - https://github.com/KennethanCeyer
