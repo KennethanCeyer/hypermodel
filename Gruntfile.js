@@ -16,8 +16,8 @@ module.exports = function (grunt) {
                 stripBanners: true
             },
             dist: {
-                src: ['lib/PIGNOSE HyperModel.js'],
-                dest: 'dist/PIGNOSE HyperModel.js'
+                src: ['src/hypermodel.js'],
+                dest: 'dist/hypermodel.js'
             }
         },
         uglify: {

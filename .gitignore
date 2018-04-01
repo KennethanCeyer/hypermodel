@@ -1,3 +1,6 @@
-node_modules/
+.nyc_output/
+.rpt2_cache/
 .idea/
-*.DS_Store
+node_modules/
+coverage/
+src/**/*.js
