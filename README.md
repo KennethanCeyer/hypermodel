@@ -2,6 +2,8 @@
 
 <p align="center">related model ui builder</p>
 
+<p align="center"><a href="https://nodei.co/npm/formulize/"><img src="https://nodei.co/npm/formulize.png" alt="NPM"></a></p>
+
 <p align="center">
     <a href="https://badge.fury.io/js/hypermodel"><img src="https://badge.fury.io/js/hypermodel.svg" alt="npm version"></a>
     <a href="https://github.com/KennethanCeyer/HyperModel/stargazers"><img src="https://img.shields.io/github/stars/KennethanCeyer/HyperModel.svg" alt="GitHub stars"></a>
