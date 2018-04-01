@@ -11,11 +11,11 @@
     <meta property="og:site_name" content="PIGNOSE">
     <title>hypermodel</title>
     <link rel="shortcut icon" type="image/x-icon" href="demo/images/pignose-ico.ico">
-    <link rel="stylesheet" type="text/css"
-          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css">
     <link rel="stylesheet" type="text/css" href="dist/hypermodel.min.css">
     <link rel="stylesheet" type="text/css"
           href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/components/icon.min.css">
     <link rel="stylesheet" type="text/css"
           href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.13.0/themes/prism.min.css">
     <link rel="stylesheet" type="text/css" href="demo/css/style.css">
@@ -25,7 +25,7 @@
 <div id="wrapper">
     <div class="header">
         <img src="demo/images/pignose-logo.png" alt="">
-        <h1>hypermodel</h1>
+        <h1>hypermodel 👾</h1>
         <a
             href="https://github.com/KennethanCeyer/HyperModel"
             target="_blank"
@@ -37,7 +37,7 @@
             class="ui button blue">Download zip</a>
     </div>
     <div class="article">
-        <h3><span>hypermodel</span></h3>
+        <h3><span>💬 hypermodel</span></h3>
         <p>hypermodel generates related model ui like DB scheme model</p>
         <p>You can drag and swap each of grids and properties.</p>
         <div class="hypermodel-container">
@@ -182,7 +182,7 @@
         </div>
     </div>
     <div id="content" class="article">
-        <h3><span>Options</span></h3>
+        <h3><span>⚡ Options</span></h3>
         <table class="ui table celled">
             <colgroup>
                 <col style="width: 120px;">
@@ -201,109 +201,109 @@
             </thead>
             <tbody>
             <tr>
-                <td>time</td>
-                <td>animate</td>
-                <td class="center"><span class="label label-primary">number</span></td>
+                <td class="code">time</td>
+                <td class="code">animate</td>
+                <td class="center"><span class="ui label"><i class="fas fa-code"></i>number</span></td>
                 <td>The line animation time when either window resize event be fired or user playing with
-                    drag&amp;drop.
+                    drag&amp;drop
                 </td>
-                <td>300</td>
+                <td class="code inline"><pre><code class="language-javascript">300</code></pre></td>
             </tr>
             <tr>
-                <td>time</td>
-                <td>frame</td>
-                <td class="center"><span class="label label-primary">number</span></td>
-                <td>The dash line's dash moving total seconds.</td>
-                <td>3000</td>
+                <td class="code">time</td>
+                <td class="code">frame</td>
+                <td class="center"><span class="ui label"><i class="fas fa-code"></i>number</span></td>
+                <td>The dash line's dash moving total seconds</td>
+                <td class="code inline"><pre><code class="language-javascript">3000</code></pre></td>
             </tr>
             <tr>
-                <td>time</td>
-                <td>highlight</td>
-                <td class="center"><span class="label label-primary">number</span></td>
-                <td>Highlight holding time. The line will be disappeared when time be ended.</td>
-                <td>3000</td>
+                <td class="code">time</td>
+                <td class="code">highlight</td>
+                <td class="center"><span class="ui label"><i class="fas fa-code"></i>number</span></td>
+                <td>Highlight holding time. The line will be disappeared when time be ended</td>
+                <td class="code inline"><pre><code class="language-javascript">3000</code></pre></td>
             </tr>
             <tr>
-                <td colspan="2">grad</td>
-                <td class="center"><span class="label label-primary">number</span></td>
+                <td class="code" colspan="2">grad</td>
+                <td class="center"><span class="ui label"><i class="fas fa-code"></i>number</span></td>
                 <td>The gradient of line 0.1(curve), 10(straight)</td>
-                <td>1.75</td>
+                <td class="code inline"><pre><code class="language-javascript">1.75</code></pre></td>
             </tr>
             <tr>
-                <td colspan="2">strokeSpeed</td>
-                <td class="center"><span class="label label-primary">number</span></td>
-                <td>How many dash line moves one second.</td>
-                <td>500</td>
+                <td class="code" colspan="2">strokeSpeed</td>
+                <td class="center"><span class="ui label"><i class="fas fa-code"></i>number</span></td>
+                <td>How many dash line moves one second</td>
+                <td class="code inline"><pre><code class="language-javascript">500</code></pre></td>
             </tr>
             <tr>
-                <td colspan="2">strokeColor</td>
-                <td class="center"><span class="label label-primary">string</span></td>
-                <td>Default line color (rgba, rgb, hash color).</td>
-                <td>rgba(192, 192, 192, .6)</td>
+                <td class="code" colspan="2">strokeColor</td>
+                <td class="center"><span class="ui label"><i class="fas fa-code"></i>string</span></td>
+                <td>Default line color (rgba, rgb, hash color)</td>
+                <td class="code inline"><pre><code class="language-css">rgba(192, 192, 192, .6)</code></pre></td>
             </tr>
             <tr>
-                <td colspan="2">strokeDashColor</td>
-                <td class="center"><span class="label label-primary">string</span></td>
-                <td>Dash line color (rgba, rgb, hash color).</td>
-                <td>rgba(192, 192, 192, .95)</td>
+                <td class="code" colspan="2">strokeDashColor</td>
+                <td class="center"><span class="ui label"><i class="fas fa-code"></i>string</span></td>
+                <td>Dash line color (rgba, rgb, hash color)</td>
+                <td class="code inline"><pre><code class="language-css">rgba(192, 192, 192, .95)</code></pre></td>
             </tr>
             <tr>
-                <td colspan="2">strokeHighlightColor</td>
-                <td class="center"><span class="label label-primary">string</span></td>
-                <td>Highlighted line color.</td>
-                <td>rgba(200, 206, 255, .6)</td>
+                <td class="code" colspan="2">strokeHighlightColor</td>
+                <td class="center"><span class="ui label"><i class="fas fa-code"></i>string</span></td>
+                <td>Highlighted line color</td>
+                <td class="code inline"><pre><code class="language-css">rgba(200, 206, 255, .6)</code></pre></td>
             </tr>
             <tr>
-                <td colspan="2">strokeHighlightDashColor</td>
-                <td class="center"><span class="label label-primary">string</span></td>
-                <td>Highlighted dash line color.</td>
-                <td>rgba(178, 192, 255, 1)</td>
+                <td class="code" colspan="2">strokeHighlightDashColor</td>
+                <td class="center"><span class="ui label"><i class="fas fa-code"></i>string</span></td>
+                <td>Highlighted dash line color</td>
+                <td class="code inline"><pre><code class="language-css">rgba(172, 192, 255, 1)</code></pre></td>
             </tr>
             <tr>
-                <td colspan="2">strokeWidth</td>
-                <td class="center"><span class="label label-primary">number</span></td>
-                <td>Default line thickness (px).</td>
-                <td>1</td>
+                <td class="code" colspan="2">strokeWidth</td>
+                <td class="center"><span class="ui label"><i class="fas fa-code"></i>number</span></td>
+                <td>Default line thickness (px)</td>
+                <td class="code inline"><pre><code class="language-javascript">1</code></pre></td>
             </tr>
             <tr>
-                <td colspan="2">strokeDashWidth</td>
-                <td class="center"><span class="label label-primary">number</span></td>
-                <td>Dash line thickness (px).</td>
-                <td>1</td>
+                <td class="code" colspan="2">strokeDashWidth</td>
+                <td class="center"><span class="ui label"><i class="fas fa-code"></i>number</span></td>
+                <td>Dash line thickness (px)</td>
+                <td class="code inline"><pre><code class="language-javascript">1</code></pre></td>
             </tr>
             <tr>
-                <td colspan="2">strokeHighlightWidth</td>
-                <td class="center"><span class="label label-primary">number</span></td>
-                <td>Highlighted line thickness (px).</td>
-                <td>1</td>
+                <td class="code" colspan="2">strokeHighlightWidth</td>
+                <td class="center"><span class="ui label"><i class="fas fa-code"></i>number</span></td>
+                <td>Highlighted line thickness (px)</td>
+                <td class="code inline"><pre><code class="language-javascript">1</code></pre></td>
             </tr>
             <tr>
-                <td colspan="2">strokeDashWeight</td>
-                <td class="center"><span class="label label-primary">number</span></td>
-                <td>Each of dash dottes's length (px).</td>
-                <td>8</td>
+                <td class="code" colspan="2">strokeDashWeight</td>
+                <td class="center"><span class="ui label"><i class="fas fa-code"></i>number</span></td>
+                <td>Each of dash dottes's length (px)</td>
+                <td class="code inline"><pre><code class="language-javascript">8</code></pre></td>
             </tr>
             <tr>
-                <td colspan="2">strokeDashMargin</td>
-                <td class="center"><span class="label label-primary">number</span></td>
-                <td>Gap about each of dash line's dottes (px).</td>
-                <td>6</td>
+                <td class="code" colspan="2">strokeDashMargin</td>
+                <td class="center"><span class="ui label"><i class="fas fa-code"></i>number</span></td>
+                <td>Gap about each of dash line's dotted (px)</td>
+                <td class="code inline"><pre><code class="language-javascript">6</code></pre></td>
             </tr>
             <tr>
-                <td colspan="2">update</td>
-                <td class="center"><span class="label label-primary">function</span></td>
-                <td>This <span class="label label-default">update</span> callback will be fired when you change the
-                    position of elements(like grid or property) with draging and drop.
+                <td class="code" colspan="2">update</td>
+                <td class="center"><span class="ui label"><i class="fas fa-code"></i>function</span></td>
+                <td>This <span class="code">update</span> callback will be fired when you change the
+                    position of elements(like grid or property) with draging and drop
                 </td>
-                <td>null</td>
+                <td class="code inline"><pre><code class="language-javascript">null</code></pre></td>
             </tr>
             </tbody>
         </table>
     </div>
-    <div id="content" class="article">
-        <h3><span>Methods</span></h3>
+    <div id="method" class="article">
+        <h3><span>⚡ Methods</span></h3>
         <h4>You can use the method like <span
-            class="label label-default">$element.hypermodel('Method Name', arguments);</span> format.</h4>
+            class="code">$element.hypermodel('Method Name', arguments);</span> format.</h4>
         <table class="ui table celled">
             <thead>
             <tr>
@@ -314,44 +314,55 @@
             </thead>
             <tbody>
             <tr>
-                <td>add</td>
-                <td class="center"><span class="label label-primary">function</span></td>
-                <td><span class="label label-default">$element</span> will be added, but not be connected yet.</td>
+                <td class="code inline"><pre><code class="language-javascript">add()</code></pre></td>
+                <td class="center"><span class="ui label"><i class="fas fa-code"></i>function</span></td>
+                <td><span class="code">$element</span> will be added, but not be connected yet</td>
             </tr>
             <tr>
-                <td>connect($target)</td>
-                <td class="center"><span class="label label-primary">function</span></td>
-                <td><span class="label label-default">$element</span> will be connected with $target.</td>
+                <td class="code inline"><pre><code class="language-javascript">connect($target)</code></pre></td>
+                <td class="center"><span class="ui label"><i class="fas fa-code"></i>function</span></td>
+                <td><span class="code">$element</span> will be connected with <span
+                    class="code">$target</span></td>
             </tr>
             <tr>
-                <td>highlight($target)</td>
-                <td class="center"><span class="label label-primary">function</span></td>
-                <td>The line which be matched between <span class="label label-default">$element</span> and <span
-                    class="label label-default">$target</span> will be highlighted.
+                <td class="code inline"><pre><code class="language-javascript">highlight($target)</code></pre></td>
+                <td class="center"><span class="ui label"><i class="fas fa-code"></i>function</span></td>
+                <td>The line which be matched between <span class="code">$element</span> and <span
+                    class="code">$target</span> will be highlighted
                 </td>
             </tr>
             <tr>
-                <td>remove()</td>
-                <td class="center"><span class="label label-primary">function</span></td>
-                <td><span class="label label-default">$element</span> will be removed, And all of connections which
-                    belong in the $element also be removed.
+                <td class="code inline"><pre><code class="language-javascript">remove()</code></pre></td>
+                <td class="center"><span class="ui label"><i class="fas fa-code"></i>function</span></td>
+                <td><span class="code">$element</span> will be removed, And all of connections which
+                    belong in the $element also be removed
                 </td>
             </tr>
             <tr>
-                <td>repaint()</td>
-                <td class="center"><span class="label label-primary">function</span></td>
-                <td>Browser will repaint the lines at correct position.</td>
+                <td class="code inline"><pre><code class="language-javascript">repaint()</code></pre></td>
+                <td class="center"><span class="ui label"><i class="fas fa-code"></i>function</span></td>
+                <td>Browser will repaint the lines at correct position</td>
             </tr>
             </tbody>
         </table>
     </div>
     <div id="npm" class="article">
-        <h3><span>npm</span></h3>
+        <h3><span>📦 npm</span></h3>
         <pre><code class="language-bash">$ npm install hypermodel</code></pre>
     </div>
-    <div id="bower" class="article">
-        <h3><span>bower</span></h3>
+    <div id="yarn" class="article">
+        <h3><span>📦 yarn</span></h3>
         <pre><code class="language-bash">$ yarn add hypermodel</code></pre>
+    </div>
+    <div id="star" class="article">
+        <h3>
+            <span>😗 do star it!</span>
+        </h3>
+        <p>If you enjoyed it, please just click the star into below github link</p>
+        <a href="https://github.com/KennethanCeyer/HyperModel" target="_blank" class="ui black button thin">
+            <i class="fab fa-github-alt"></i>
+            GitHub
+        </a>
     </div>
     <div id="example" class="article">
         <h3><span>Example</span></h3>
@@ -425,8 +436,9 @@
 <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.13.0/components/prism-javascript.min.js"></script>
 <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.13.0/components/prism-typescript.min.js"></script>
+src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.13.0/components/prism-typescript.min.js"></script>
 <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.13.0/components/prism-json.min.js"></script>
+<script type="text/javascript" src="https://twemoji.maxcdn.com/2/twemoji.min.js?2.5"></script>
 </body>
 </html>
