@@ -1,6 +1,6 @@
 {
   "name": "hypermodel",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "related model ui builder library",
   "main": "dist/hypermodel.min.js",
   "scripts": {
@@ -31,8 +31,8 @@
   "dependencies": {},
   "devDependencies": {
     "grunt": "^1.0.2",
-    "grunt-contrib-csslint": "^1.0.0",
-    "grunt-contrib-cssmin": "^1.0.1",
+    "grunt-contrib-csslint": "^2.0.0",
+    "grunt-contrib-cssmin": "^2.2.1",
     "grunt-contrib-jshint": "^1.1.0",
     "grunt-contrib-uglify": "^3.3.0"
   }
